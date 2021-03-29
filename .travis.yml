@@ -15,9 +15,9 @@ after_success:
   - docker build -t alinafembendera/multi-server ./server
   - docker build -t alinafembendera/multi-worker ./worker
 #Login to docker CLI
-  - echo "$DOCKER_PASSWORD" | docker login -u "DOCKER_ID" --password-stdin
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 #The these images and push them to docker hub
-  - docker push alinafembendera/kuyesa:alinafembendera/multi-client
-  - docker push alinafembendera/kuyesa:alinafembendera/multi-nginx
-  - docker push alinafembendera/kuyesa:alinafembendera/multi-server
-  - docker push alinafembendera/kuyesa:alinafembendera/multi-worker
+  - docker push alinafembendera/multi-client
+  - docker push alinafembendera/multi-nginx
+  - docker push alinafembendera/multi-server
+  - docker push alinafembendera/multi-worker
