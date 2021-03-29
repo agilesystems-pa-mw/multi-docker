@@ -17,7 +17,7 @@ after_success:
 #Login to docker CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "DOCKER_ID" --password-stdin
 #The these images and push them to docker hub
-  - docker push alinafembendera/kuyesa
-#  - docker push alinafembendera/kuyesa:alinafembendera/multi-nginx
-#  - docker push alinafembendera/kuyesa:alinafembendera/multi-server
-#  - docker push alinafembendera/kuyesa:alinafembendera/multi-worker
+  - docker push alinafembendera/kuyesa:alinafembendera/multi-client
+  - docker push alinafembendera/kuyesa:alinafembendera/multi-nginx
+  - docker push alinafembendera/kuyesa:alinafembendera/multi-server
+  - docker push alinafembendera/kuyesa:alinafembendera/multi-worker
