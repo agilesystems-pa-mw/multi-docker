@@ -10,14 +10,14 @@ script:
   - docker run -e CI=true alinafembendera/react-test npm test
 
 after_success:
-  - docker build -t alinafembendera/kuyesa/multi-client ./client
-  - docker build -t alinafembendera/kuyesa/multi-nginx ./nginx
-  - docker build -t alinafembendera/kuyesa/multi-server ./server
-  - docker build -t alinafembendera/kuyesa/multi-worker ./worker
+  - docker build -t alinafembendera/multi-client ./client
+  - docker build -t alinafembendera/multi-nginx ./nginx
+  - docker build -t alinafembendera/multi-server ./server
+  - docker build -t alinafembendera/multi-worker ./worker
 #Login to docker CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "DOCKER_ID" --password-stdin
 #The these images and push them to docker hub
-  - docker push alinafembendera/kuyesa/multi-client
-  - docker push alinafembendera/kuyesa/multi-nginx
-  - docker push alinafembendera/kuyesa/multi-server
-  - docker push alinafembendera/kuyesa/multi-worker
+  - docker push alinafembendera/kuyesa
+#  - docker push alinafembendera/multi-nginx
+#  - docker push alinafembendera/multi-server
+#  - docker push alinafembendera/multi-worker
